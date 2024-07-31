@@ -243,7 +243,7 @@ void loop() {
 //delete text below later//
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
-![Servo Diagram](assets/images/FourServoDiagram.png)
+![Servo Diagram](/assets/images/FourServoDiagram.png)
 
 
 # Bill of Materials
@@ -252,7 +252,7 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 |:--:|:--:|:--:|:--:|
 | LAFVIN Mechanical Arm Claw Kit | Contains the arduino board, sensor shield, servo motors, wires, joystick, and acrylic parts for the robotic arm | $53.99 | <a href="https://lafvintech.com/products/new-lafvin-4dof-acrylic-toys-robot-mechanical-arm-claw-kit-for-arduino-for-uno-r3-diy-robot-with-cd-tutorial"> Link </a> |
 | Arducam | Provides video capabilities to the robotic arm | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| HM10 Bluetooth Module | Provides bluetooth capabilities to the robotic arm, allowing it to be controlled using a phone | $10.99 | <https://www.amazon.com/DSD-TECH-Bluetooth-iBeacon-Arduino/dp/B06WGZB2N4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AFLYC5O31PGVX> Link </a> |
+| HM10 Bluetooth Module | Provides bluetooth capabilities to the robotic arm, allowing it to be controlled using a phone | $10.99 | <a href="https://www.amazon.com/DSD-TECH-Bluetooth-iBeacon-Arduino/dp/B06WGZB2N4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AFLYC5O31PGVX"> Link </a> |
 
 # Other Resources/Examples
 //maybe list websites used for this project. Ex. website used for arducam guide.//
