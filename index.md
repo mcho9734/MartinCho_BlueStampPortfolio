@@ -218,11 +218,10 @@ void upper_arm()
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HRW0X-JDqnY?si=iJHHUqSDNEeywt0l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+- The robotic arm consists of an acrylic frame that is controlled using two joysticks that send input signals to the Arduino Uno board. The code on the Arduino IDE then takes this signal and converts it into a command for the servo motors to execute, such as moving the arm left 30 degrees. The servo motors are attached to the acrylic frame of the robotic arm and are powered by a sensor shield that is placed on top of the Arduino Uno's pins.
+- For the first milestone, I plan on testing my servo motors and joysticks so I don't have problems later that cause me to dissasemble the whole arm.
+- One minor challenge I faced was Arduino repeatedly giving me error messages when uploading code, but this was easily fixed by restarting my Arduino IDE.
+- For my second milestone, I plan on completing the assembly and code for the robotic arm.
 
 # First Milestone Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -241,7 +240,10 @@ void loop() {
 ```
 
 # Schematics 
+//delete text below later//
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+
+![Servo Diagram](assets/images/FourServoDiagram.png)
 
 
 # Bill of Materials
@@ -249,10 +251,11 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | LAFVIN Mechanical Arm Claw Kit | Contains the arduino board, sensor shield, servo motors, wires, joystick, and acrylic parts for the robotic arm | $53.99 | <a href="https://lafvintech.com/products/new-lafvin-4dof-acrylic-toys-robot-mechanical-arm-claw-kit-for-arduino-for-uno-r3-diy-robot-with-cd-tutorial"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Arducam | Provides video capabilities to the robotic arm | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| HM10 Bluetooth Module | Provides bluetooth capabilities to the robotic arm, allowing it to be controlled using a phone | $10.99 | <https://www.amazon.com/DSD-TECH-Bluetooth-iBeacon-Arduino/dp/B06WGZB2N4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AFLYC5O31PGVX> Link </a> |
 
 # Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
+//maybe list websites used for this project. Ex. website used for arducam guide.//
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
