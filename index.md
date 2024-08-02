@@ -227,17 +227,52 @@ void upper_arm()
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
-void setup() {
-  // put your setup code here, to run once:
+//Setting up 4 servo motors
+#include <Servo.h>
+Servo myservo1; // create servo object to control a servo
+Servo myservo2;
+Servo myservo3;
+Servo myservo4;
+int pos1=90, pos2=90, pos3=90, pos4=90; //define the variable of 4 servo angle and assign the initial value for installing
+void setup(){
   Serial.begin(9600);
-  Serial.println("Hello World!");
+  myservo1.attach(3); // set the control pin of servo 1 to 3 digital I/0
+  myservo2.attach(5); // set the control pin of servo 2 to 5 digital I/0
+  myservo3.attach(6); // set the control pin of servo 3 to 6 digital I/0
+  myservo4.attach(9); // set the control pin of servo 4 to 9 digital I/0
+  delay(1000);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  myservo1.write(pos1);  // Control servo motor rotation to specified angle
+  myservo2.write(pos2);
+  myservo3.write(pos3);
+  myservo4.write(pos4);
+  delay(1000);
 }
 ```
+
+'''c++
+//Testing Joystick
+void setup() { 
+  pinMode(3, INPUT); 
+  Serial.begin(9600); 
+} 
+
+void loop(){
+  int value = 0; 
+  value = analogRead(A0); 
+  Serial.print("X:"); 
+  Serial.print(value, DEC); 
+  value = analogRead(A1); 
+  Serial.print(" | Y:"); 
+  Serial.print(value, DEC); 
+  value = digitalRead(3); 
+  Serial.print(" | Z: "); 
+  Serial.println(value, DEC); 
+  delay(100); 
+}
+'''
 
 # Schematics 
 Servos:
@@ -251,11 +286,12 @@ Joysticks:
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | LAFVIN Mechanical Arm Claw Kit | Contains the arduino board, sensor shield, servo motors, wires, joystick, and acrylic parts for the robotic arm | $53.99 | <a href="https://lafvintech.com/products/new-lafvin-4dof-acrylic-toys-robot-mechanical-arm-claw-kit-for-arduino-for-uno-r3-diy-robot-with-cd-tutorial"> Link </a> |
-| Arducam | Provides video capabilities to the robotic arm | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Raspberry Pi | Microprocessor to handle the pi camera | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Pi Camera | Camera that is controlled by the Raspberry Pi | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | HM10 Bluetooth Module | Provides bluetooth capabilities to the robotic arm, allowing it to be controlled using a phone | $10.99 | <a href="https://www.amazon.com/DSD-TECH-Bluetooth-iBeacon-Arduino/dp/B06WGZB2N4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AFLYC5O31PGVX"> Link </a> |
 
 # Other Resources/Examples
-//maybe list websites used for this project. Ex. website used for arducam guide.//
+//maybe list websites used for this project.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
