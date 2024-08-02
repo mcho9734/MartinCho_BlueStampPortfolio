@@ -20,7 +20,7 @@ Final Milestone Key Details:
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+- 
 
 # Final Milestone Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -44,13 +44,12 @@ void loop() {
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C2Xco2PSx_w?si=evDUAN3PfTF7yNpN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Second Milestone Key Details:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+- For this milestone, I completed the assembly of the robotic arm and finished the code.
+- What surprised me so far is the simplicity and efficiency of the base robotic arm. The only electrical components were four servo motors and two joysticks, which meant I only needed two unique blocks of code.
+- A challenge I faced was that the robotic arm wouldn't move when I input commands to the joysticks. I later realized that the screws on the moving joints were too tight and caused a lot of friction, so I loosened the screws at joints and the robotic arm began to move smoothly.
+- For my final milestone, I plan to add bluetooth capabilities to the robotic arm as an alternative to the joystick controller. I also plan on connecting a camera to the robotic arm so that I can take pictures and see what the robotic arm sees.
 
 # Second Milestone Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
 #include <Servo.h> // add the servo libraries
@@ -224,7 +223,6 @@ void upper_arm()
 - For my second milestone, I plan on completing the assembly and code for the robotic arm.
 
 # First Milestone Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
 //Setting up 4 servo motors
