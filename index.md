@@ -17,10 +17,9 @@ My project is a 3-joint robotic arm that uses four servo motors to control four 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Final Milestone Key Details:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
+- For my final milestone, I added bluetooth to my robotic arm. To do this, I connected an HM10 bluetooth module to my Arduino and started software serial communication between the Arduino and HM10 so the components can communicate with one another. This allows me to send inputs from my phone, which in turn sends signals to the HM10, and then the Arduino. Additionally, I connected a Raspberry Pi 4 to my Arduino via USB and started serial communication between the two. This allowed me to send signals from the Arduino's joysticks to the Raspberry Pi's camera to take pictures at the click of the joystick button.
+- My biggest challenge at Bluestamp was figuring out how to send data between my Arduino and Raspberry Pi for my camera. Raspberry Pi 4 no longer supports the latest version of Arduino IDE, which means that there weren't many relevant online resources to help me. I solved this issue by downloading a previous version of Arduino and combining bits of code from various youtube guides, online forums, and Bluestamp instructors. My biggest triump is getting the camera to finally work in tandem with the Arduino because I spent so many hours researching for it.
 - A summary of key topics you learned about
-- 
 
 # Final Milestone Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -44,8 +43,8 @@ void loop() {
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C2Xco2PSx_w?si=evDUAN3PfTF7yNpN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Second Milestone Key Details:
-- For this milestone, I completed the assembly of the robotic arm and finished the code.
-- What surprised me so far is the simplicity and efficiency of the base robotic arm. The only electrical components were four servo motors and two joysticks, which meant I only needed two unique blocks of code.
+- For this milestone, I completed the assembly of the robotic arm and finished the code. The code works by constantly reading values from the joysticks using a while-loop and then executing the appropriate function to move the robotic arm.
+- What surprised me so far is the simplicity and efficiency of the base robotic arm. The only electrical components were four servo motors and two joysticks, which meant I only needed two unique blocks of code (and a lot of rinse & repeat).
 - A challenge I faced was that the robotic arm wouldn't move when I input commands to the joysticks. I later realized that the screws on the moving joints were too tight and caused a lot of friction, so I loosened the screws at joints and the robotic arm began to move smoothly.
 - For my final milestone, I plan to add bluetooth capabilities to the robotic arm as an alternative to the joystick controller. I also plan on connecting a camera to the robotic arm so that I can take pictures and see what the robotic arm sees.
 
