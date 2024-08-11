@@ -18,7 +18,9 @@ My project is a 3-joint robotic arm that uses four servo motors to control four 
 
 Final Milestone Key Details:
 - For my final milestone, I added bluetooth to my robotic arm. To do this, I connected an HM10 bluetooth module to my Arduino and started software serial communication between the Arduino and HM10 so the components can communicate with one another. This allows me to send inputs from my phone, which in turn sends signals to the HM10, and then the Arduino. Additionally, I connected a Raspberry Pi 4 to my Arduino via USB and started serial communication between the two. This allowed me to send signals from the Arduino's joysticks to the Raspberry Pi's camera to take pictures at the click of the joystick button.
+
 - My biggest challenge at Bluestamp was figuring out how to send data between my Arduino and Raspberry Pi for my camera. Raspberry Pi 4 no longer supports the latest version of Arduino IDE, which means that there weren't many relevant online resources to help me. I solved this issue by downloading a previous version of Arduino and combining bits of code from various youtube guides, online forums, and Bluestamp instructors. My biggest triump is getting the camera to finally work with the Arduino because I spent so many hours researching for it.
+
 - At Bluestamp, I gained hands-on experience with engineering and learned how to break down big projects into smaller steps. The three joint arm seemed intimidating at first, but wasn't as difficult as I thought it would be once I started working on it.
 
 # Final Milestone Code
@@ -239,8 +241,11 @@ void LF()
 
 Second Milestone Key Details:
 - For this milestone, I completed the assembly of the robotic arm and finished the code. The code works by constantly reading values from the joysticks using a while-loop and then executing the appropriate function to move the robotic arm.
+
 - What surprised me so far is the simplicity and efficiency of the base robotic arm. The only electrical components were four servo motors and two joysticks, which meant I only needed two unique blocks of code (and a lot of rinse & repeat).
+
 - A challenge I faced was that the robotic arm wouldn't move when I input commands to the joysticks. I later realized that the screws on the moving joints were too tight and caused a lot of friction, so I loosened the screws at joints and the robotic arm began to move smoothly.
+
 - For my final milestone, I plan to add bluetooth capabilities to the robotic arm as an alternative to the joystick controller. I also plan on connecting a camera to the robotic arm so that I can take pictures and see what the robotic arm sees.
 
 # Second Milestone Code
@@ -411,9 +416,13 @@ void upper_arm()
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HRW0X-JDqnY?si=iJHHUqSDNEeywt0l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+First Milestone Key Details:
 - The robotic arm consists of an acrylic frame that is controlled using two joysticks that send input signals to the Arduino Uno board. The code on the Arduino IDE then takes this signal and converts it into a command for the servo motors to execute, such as moving the arm left 30 degrees. The servo motors are attached to the acrylic frame of the robotic arm and are powered by a sensor shield that is placed on top of the Arduino Uno's pins.
+
 - For the first milestone, I plan on testing my servo motors and joysticks so I don't have problems later that cause me to dissasemble the whole arm.
+
 - One minor challenge I faced was Arduino repeatedly giving me error messages when uploading code, but this was easily fixed by restarting my Arduino IDE.
+
 - For my second milestone, I plan on completing the assembly and code for the robotic arm.
 
 # First Milestone Code
@@ -467,9 +476,7 @@ void loop(){
 ```
 
 # Schematics 
-Servos:
 ![ServoDiagram](FourServoDiagram.png)
-Joysticks:
 ![JoystickDiagram](TwoJoystickDiagram.png)
 
 
