@@ -483,6 +483,5 @@ Joysticks:
 | HM10 Bluetooth Module | Provides bluetooth capabilities to the robotic arm, allowing it to be controlled using a phone | $10.99 | <a href="https://www.amazon.com/DSD-TECH-Bluetooth-iBeacon-Arduino/dp/B06WGZB2N4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AFLYC5O31PGVX"> Link </a> |
 
 # Other Resources/Examples
-- <a href="https://www.youtube.com/watch?v=jU_b8WBTUew&t=2513s"> Link </a>
-- [Example 2](https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+- [Source 1](https://www.youtube.com/watch?v=jU_b8WBTUew&t=2513s)
+- [Source 2](https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf)
