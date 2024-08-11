@@ -37,7 +37,7 @@ ser.reset_input_buffer()               #resets serial communication data receive
 print("Serial OK")        #prints if everything is fine with no error
 
 camera = Picamera2()
-camera.start(show_preview=True)  #figure out how to full screen on startup maybe
+camera.start(show_preview=True)
 
 try:          #try/except structure is like while loop w/ "except" that can handle error cases.
     while True:
@@ -53,6 +53,184 @@ except KeyboardInterrupt:
     print("Close Serial Communication")
     ser.close()            #closes serial communication before program is terminated.
 ```
+
+'''c++
+//I added this procedure to the second milestone code to allow for taking pictures.
+void picture(){
+  if (digitalRead(left_key)==LOW){
+    Serial.println("Taking Picture");
+    delay(300);
+  }
+}
+'''
+
+'''c++
+//This is the code for the HM10 bluetooth module. A software serial object is created to emulate a physical connection between the HM10 and Arduino.
+#include <SoftwareSerial.h>
+#include <Servo.h> // add the servo libraries
+Servo myservo1; // create servo object to control a servo
+Servo myservo2;
+Servo myservo3;
+Servo myservo4;
+int pos1=90, pos2=90, pos3=90, pos4=90; // define the variable of 4 servo angle,and assign the initial value (that is the boot posture
+//angle value)
+
+//Create software serial object to communicate with HM10
+SoftwareSerial mySerial(13, 12); //HM10 Tx & Rx is connected to Arduino #13 & #12.  emulates serial communications pins 1 and 2.
+//*transmit/receive of arduino is flipped from transmit/receive of bluetooth module.
+
+void setup()
+{
+  // boot posture
+  myservo1.write(pos1);
+  delay(1000);
+  myservo2.write(pos2);
+  myservo3.write(pos3);
+  myservo4.write(pos4);
+  delay(1500);
+  //Begin serial communication with Arduino and Arduino IDE (Serial Monitor)
+  Serial.begin(9600);
+  
+  //Begin serial communication with Arduino and HM10
+  mySerial.begin(9600);
+}
+char serial_val;
+
+void loop()
+{
+  myservo1.attach(3); // set the control pin of servo 1 to D3  dizuo-servo1-3
+  myservo2.attach(5); // set the control pin of servo 2 to D5  arm-servo2-5
+  myservo3.attach(6); //set the control pin of servo 3 to D6   lower arm-servo-6
+  myservo4.attach(9); // set the control pin of servo 4 to D9  claw-servo-9
+  if(mySerial.available()) 
+  {
+    serial_val = mySerial.read();//Forward what Software Serial received to Serial Port
+    Serial.write(serial_val);
+    switch(serial_val)     //switch is like compact if statements.  The "case" statements are like separate if statements. Ex. If we send "L", T_left() will run.
+    //after checking a case, arduino will move on to check next case (hence the "break" after each line.)
+    {
+      case 'L':  T_left();  break;   // turn left
+      case 'R':  T_right();  break;//turn right 
+      case 'B':  RB();  break;// the lower arm will draw back 
+      case 'F':  RF();  break;// the lower arm will  stretch out
+      case 'C':  ZK();  break;//close the claw
+      case 'O':  ZB();  break;//open the claw
+      case 'U':  LB();  break;//the upper arm will lift up 
+      case 'D':  LF();  break;//the upper arm will go down 
+      case 'P':  pickUp(); break;//arm will close claw and lift object
+      default:break;                                          
+    }
+  }
+  delay(20);
+}
+//**************************************************
+void pickUp(){
+  while (pos4 > 10){
+    ZK();
+    delay(75);
+  }
+  delay(500);
+  for (int i=0; i<4; i++){
+    LB();
+    RB();
+    delay(50);
+  }
+}
+
+// turn left
+void T_left()
+{
+    pos1=pos1+8;
+    myservo1.write(pos1);
+    delay(5);
+    if(pos1>180)
+    {
+      pos1=180;
+    }
+}
+//turn right 
+void T_right()
+{
+    pos1=pos1-8;
+    myservo1.write(pos1);
+    delay(5);
+    if(pos1<1)
+    {
+      pos1=1;
+    }
+}
+//********************************************
+//close the claw
+void ZK()
+{
+      pos4=pos4-8;
+      Serial.println(pos4);
+      myservo4.write(pos4);
+      delay(5);
+      if(pos4<10)
+      {
+        pos4=10;
+      }
+}
+// open the claw
+void ZB()
+{
+    pos4=pos4+8;
+    Serial.println(pos4);
+    myservo4.write(pos4);
+    delay(5);
+    if(pos4>120)
+    {
+      pos4=120;
+    }
+}
+//******************************************
+// the lower arm will draw back 
+void RB()
+{
+    pos2=pos2-8;
+    myservo2.write(pos2);
+    delay(5);
+    if(pos2<25)
+    {
+      pos2=25;
+    }
+}
+// the lower arm will stretch out
+void RF()
+{
+    pos2=pos2+8;
+    myservo2.write(pos2);
+    delay(5);
+    if(pos2>180)
+    {
+      pos2=180;
+    }
+}
+//***************************************
+//the upper arm will lift up  
+void LB()
+{
+  pos3=pos3+8;
+  myservo3.write(pos3);
+  delay(5);
+  if(pos3>135)
+  {
+    pos3=135;
+  }
+}
+//the upper arm will go down  
+void LF()
+{
+  pos3=pos3-8;
+    myservo3.write(pos3);
+    delay(5);
+    if(pos3<0)
+    {
+      pos3=0;
+    }
+}
+'''
 
 # Second Milestone
 
