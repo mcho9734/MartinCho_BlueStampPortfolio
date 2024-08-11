@@ -18,23 +18,40 @@ My project is a 3-joint robotic arm that uses four servo motors to control four 
 
 Final Milestone Key Details:
 - For my final milestone, I added bluetooth to my robotic arm. To do this, I connected an HM10 bluetooth module to my Arduino and started software serial communication between the Arduino and HM10 so the components can communicate with one another. This allows me to send inputs from my phone, which in turn sends signals to the HM10, and then the Arduino. Additionally, I connected a Raspberry Pi 4 to my Arduino via USB and started serial communication between the two. This allowed me to send signals from the Arduino's joysticks to the Raspberry Pi's camera to take pictures at the click of the joystick button.
-- My biggest challenge at Bluestamp was figuring out how to send data between my Arduino and Raspberry Pi for my camera. Raspberry Pi 4 no longer supports the latest version of Arduino IDE, which means that there weren't many relevant online resources to help me. I solved this issue by downloading a previous version of Arduino and combining bits of code from various youtube guides, online forums, and Bluestamp instructors. My biggest triump is getting the camera to finally work in tandem with the Arduino because I spent so many hours researching for it.
-- A summary of key topics you learned about
+- My biggest challenge at Bluestamp was figuring out how to send data between my Arduino and Raspberry Pi for my camera. Raspberry Pi 4 no longer supports the latest version of Arduino IDE, which means that there weren't many relevant online resources to help me. I solved this issue by downloading a previous version of Arduino and combining bits of code from various youtube guides, online forums, and Bluestamp instructors. My biggest triump is getting the camera to finally work with the Arduino because I spent so many hours researching for it.
+- At Bluestamp, I gained hands-on experience with engineering and learned how to break down big projects into smaller steps. The three joint arm seemed intimidating at first, but wasn't as difficult as I thought it would be once I started working on it.
 
 # Final Milestone Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
-```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
 
-void loop() {
-  // put your main code here, to run repeatedly:
+```python
+#Code for Raspberry Pi camera
+from picamera2 import Picamera2, Preview
+import time
+import cv2
+import serial
 
-}
+ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1.0)   #connects pi serial to arduino serial
+time.sleep(2)               #waits 3 seconds to allow arduino to set up serial communication
+ser.reset_input_buffer()               #resets serial communication data received within 3 sec sleep
+print("Serial OK")        #prints if everything is fine with no error
+
+camera = Picamera2()
+camera.start(show_preview=True)  #figure out how to full screen on startup maybe
+
+try:          #try/except structure is like while loop w/ "except" that can handle error cases.
+    while True:
+        time.sleep(0.01)
+        if ser.in_waiting > 0:    #ser.in_waiting returns number of bytes in serial monitor.
+            line = ser.readline().decode('utf-8')   #reads line until end of current line
+            print(line)
+            if "Taking Picture" in line:
+                im = camera.capture_array()
+                current = time.ctime(time.time())       #display current time for each photo taken. Creates new files for photos instead of replacing the same file with consequent photos.
+                cv2.imwrite(current + ' photo.png', im)
+except KeyboardInterrupt:
+    print("Close Serial Communication")
+    ser.close()            #closes serial communication before program is terminated.
 ```
 
 # Second Milestone
