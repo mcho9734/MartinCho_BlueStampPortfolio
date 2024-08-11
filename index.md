@@ -444,7 +444,7 @@ void loop() {
 }
 ```
 
-'''c++
+```c++
 //Testing Joystick
 void setup() { 
   pinMode(3, INPUT); 
@@ -464,7 +464,7 @@ void loop(){
   Serial.println(value, DEC); 
   delay(100); 
 }
-'''
+```
 
 # Schematics 
 Servos:
@@ -478,12 +478,11 @@ Joysticks:
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | LAFVIN Mechanical Arm Claw Kit | Contains the arduino board, sensor shield, servo motors, wires, joystick, and acrylic parts for the robotic arm | $53.99 | <a href="https://lafvintech.com/products/new-lafvin-4dof-acrylic-toys-robot-mechanical-arm-claw-kit-for-arduino-for-uno-r3-diy-robot-with-cd-tutorial"> Link </a> |
-| Raspberry Pi | Microprocessor to handle the pi camera | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Pi Camera | Camera that is controlled by the Raspberry Pi | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Raspberry Pi 4 Kit | Contains the Raspberry Pi 4 processor, cables to connect the Raspberry Pi to a power supply and monitor, and an SD card for the operating system | $119.99 | <a href="https://www.amazon.com/RasTech-Raspberry-Starter-Heatsink-Screwdriver/dp/B0B7RZQ3HY?th=1"> Link </a> |
+| Pi Camera | Camera that is controlled by the Raspberry Pi | $6.99 | <a href="https://www.arducam.com/product/arducam-ov5647-standard-raspberry-pi-camera-b0033/"> Link </a> |
 | HM10 Bluetooth Module | Provides bluetooth capabilities to the robotic arm, allowing it to be controlled using a phone | $10.99 | <a href="https://www.amazon.com/DSD-TECH-Bluetooth-iBeacon-Arduino/dp/B06WGZB2N4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AFLYC5O31PGVX"> Link </a> |
 
 # Other Resources/Examples
-//maybe list websites used for this project.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
+- <a href="https://www.youtube.com/watch?v=jU_b8WBTUew&t=2513s"> Link </a>
+- [Example 2](https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
