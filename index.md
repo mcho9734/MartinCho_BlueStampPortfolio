@@ -54,7 +54,7 @@ except KeyboardInterrupt:
     ser.close()            #closes serial communication before program is terminated.
 ```
 
-'''c++
+```c++
 //I added this procedure to the second milestone code to allow for taking pictures.
 void picture(){
   if (digitalRead(left_key)==LOW){
@@ -62,9 +62,9 @@ void picture(){
     delay(300);
   }
 }
-'''
+```
 
-'''c++
+```c++
 //This is the code for the HM10 bluetooth module. A software serial object is created to emulate a physical connection between the HM10 and Arduino.
 #include <SoftwareSerial.h>
 #include <Servo.h> // add the servo libraries
@@ -230,7 +230,7 @@ void LF()
       pos3=0;
     }
 }
-'''
+```
 
 # Second Milestone
 
