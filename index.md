@@ -1,4 +1,3 @@
-//to do: add selfie, film final milestone video
 # 3-Joint Robotic Arm
 My project is a 3-joint robotic arm that uses four servo motors to control four ranges of motion. The robotic arm is able to move side to side, up and down, forward and backward, and pick up objects. The servo motors are powered by a sensor shield and are controlled using the x and y axes on two joysticks of a controller.
 
