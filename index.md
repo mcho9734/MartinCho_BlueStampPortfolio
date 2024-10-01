@@ -8,7 +8,6 @@ My project is a 3-joint robotic arm that uses four servo motors to control four 
 |:--:|:--:|:--:|:--:|
 | Martin C | Troy High School | Mechatronics Engineering | Junior
 
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 ![Headstone Image](BluestampPicture.jpg)
   
