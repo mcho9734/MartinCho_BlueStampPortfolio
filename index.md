@@ -13,7 +13,7 @@ My project is a 3-joint robotic arm that uses four servo motors to control four 
 # Final Milestone
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iKCtLwgx0sU?si=3B5J8e2rOcz29Ohu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Final Milestone Key Details:
 - For my final milestone, I added bluetooth to my robotic arm. To do this, I connected an HM10 bluetooth module to my Arduino and started software serial communication between the Arduino and HM10 so the components can communicate with one another. This allows me to send inputs from my phone, which in turn sends signals to the HM10, and then the Arduino. Additionally, I connected a Raspberry Pi 4 to my Arduino via USB and started serial communication between the two. This allowed me to send signals from the Arduino's joysticks to the Raspberry Pi's camera to take pictures at the click of the joystick button.
